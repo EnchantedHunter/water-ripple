@@ -1,6 +1,5 @@
 package com.nocompany.waveshader;
 
-
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
@@ -37,7 +36,7 @@ public class Scene implements Disposable {
 
         render.getFrameBuffer().end();
         render.setDrawTexture(render.getFrameBuffer().getColorBufferTexture());
-//
+
         Gdx.gl.glClearColor(1, 1, 1, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
@@ -52,19 +51,7 @@ public class Scene implements Disposable {
         render.getSpriteBatch().setShader(render.getDistorsionShader());
         render.getSpriteBatch().draw(render.getImageTexture(), 0, 0, width, height);
         render.getSpriteBatch().end();
-//
-//
-//		Gdx.gl.glClearColor(1, 1, 1, 1);
-//	    Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-//
-//
-//        render.getSpriteBatch().begin();
-//        render.getSpriteBatch().setShader(null);
-//        render.getSpriteBatch().draw(render.getFrameBuffer().getColorBufferTexture(), 0, 0, width, height);
-//        render.getSpriteBatch().end();
-
     }
-
 
     @Override
     public void dispose() {

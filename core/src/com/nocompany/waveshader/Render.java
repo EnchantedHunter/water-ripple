@@ -94,7 +94,6 @@ public class Render implements Disposable {
     }
 
     public void setDrawTexture(Texture texture) {
-//        drawTexture.dispose();
         drawTexture = texture;
     }
 

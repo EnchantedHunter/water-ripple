@@ -28,8 +28,6 @@ public class Application implements ApplicationListener
 	@Override
 	public void resize(int width, int height)
 	{
-//		scene.dispose();
-//		scene = new Scene(width, height);
 	}
 
 	@Override
