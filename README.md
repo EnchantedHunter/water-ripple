@@ -19,6 +19,6 @@
 
 `./gradlew desktop:dist`
 
-`cd /desktop/build/libs`
+`cd desktop/build/libs`
 
 `java -jar desktop-1.0.jar`
