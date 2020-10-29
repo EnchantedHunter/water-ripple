@@ -24,7 +24,7 @@ public class Scene implements Disposable {
 
         render.getSpriteBatch().begin();
         render.getSpriteBatch().setShader(render.getWaveShader());
-        render.getSpriteBatch().draw(render.getDrawTexture(), 0, 0, width, height, 0, 0, width, height, false, true);
+        render.getSpriteBatch().draw(render.getFrameBuffer().getColorBufferTexture(), 0, 0, width, height, 0, 0, width, height, false, true);
         render.getSpriteBatch().end();
 
         if(Gdx.input.isTouched()) {
@@ -35,13 +35,12 @@ public class Scene implements Disposable {
         }
 
         render.getFrameBuffer().end();
-        render.setDrawTexture(render.getFrameBuffer().getColorBufferTexture());
 
         Gdx.gl.glClearColor(1, 1, 1, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         render.getDistorsionShader().begin();
-        render.getDrawTexture().bind(1);
+        render.getFrameBuffer().getColorBufferTexture().bind(1);
         render.getDistorsionShader().setUniformi("u_texture_displacement", 1);
         render.getImageTexture().bind(0);
         render.getDistorsionShader().setUniformi("u_texture", 0);

@@ -17,7 +17,6 @@ public class Render implements Disposable {
     private FrameBuffer     frameBuffer;
     private ShapeRenderer   shapeRenderer;
 
-    private Texture         drawTexture;
     private Texture         imageTexture;
 
     public Render(int width, int height){
@@ -58,10 +57,6 @@ public class Render implements Disposable {
     }
 
     private void loadTextures(int width, int height){
-        Pixmap pixmap = new Pixmap( width, height, Pixmap.Format.RGB565 );
-        drawTexture = new Texture(pixmap);
-        pixmap.dispose();
-
         imageTexture = new Texture(Gdx.files.internal("blue_flower.jpg"));
     }
 
@@ -85,16 +80,8 @@ public class Render implements Disposable {
         return shapeRenderer;
     }
 
-    public Texture getDrawTexture() {
-        return drawTexture;
-    }
-
     public Texture getImageTexture() {
         return imageTexture;
-    }
-
-    public void setDrawTexture(Texture texture) {
-        drawTexture = texture;
     }
 
     @Override
@@ -105,6 +92,5 @@ public class Render implements Disposable {
         shapeRenderer.dispose();
         frameBuffer.dispose();
         imageTexture.dispose();
-        drawTexture.dispose();
     }
 }

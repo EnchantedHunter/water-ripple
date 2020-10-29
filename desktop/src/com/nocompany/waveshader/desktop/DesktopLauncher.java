@@ -9,7 +9,7 @@ public class DesktopLauncher {
 
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 
-		config.samples 			= 4;
+		config.samples 			= 2;
 		config.width 			= 800;
 		config.height 			= 800;
 		config.backgroundFPS 	= 60;
